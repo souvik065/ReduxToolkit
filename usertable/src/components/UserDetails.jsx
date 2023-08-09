@@ -3,10 +3,12 @@ import { fakeUserData } from "../api";
 import DeleteAllUser from "./DeleteAllUser";
 import styled from "styled-components";
 import { addUser } from "../store/slices/UserSlice";
+import DisplayUsers from "./DisplayUsers";
 
 const UserDetails = () => {
   const dispatch = useDispatch();
   const addNewUser = (payload) => {
+    console.log("Name: ", payload);
     dispatch(addUser(payload));
   };
   return (
@@ -22,8 +24,7 @@ const UserDetails = () => {
           </button>
         </div>
         <ul>
-          <li>Hi</li>
-          <li>Hii</li>
+          <DisplayUsers />
         </ul>
         <hr />
         <DeleteAllUser />
