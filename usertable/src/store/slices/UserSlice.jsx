@@ -10,9 +10,11 @@ const userSlice = createSlice({
     removeUser(state, action) {
       state.splice(action.payload, 1);
     },
-    deleteUsers(state, action) {},
+    clearAllUsers(state, action) {
+      return [];
+    },
   },
 });
 
 export default userSlice.reducer;
-export const { addUser, removeUser } = userSlice.actions;
+export const { addUser, removeUser, clearAllUsers } = userSlice.actions;
